@@ -136,3 +136,22 @@ body.ww-menu-open{overflow:hidden}
 @media screen and (max-width:1023px){
   #main_MF .comp-mwddok8z{margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
 }
+
+/* --- Desktop: gangbare, vaste lettergroottes (Wix schaalde mee met de schermbreedte) --- */
+@media screen and (min-width:1024px){
+  #main_MF,#main_MF *{
+    --wst-heading-1-font:normal normal 400 52px/1.05em fraunces!important;
+    --wst-heading-2-font:normal normal 400 42px/1.1em fraunces!important;
+    --wst-heading-3-font:normal normal 400 32px/1.15em fraunces!important;
+    --wst-heading-4-font:normal normal 400 26px/1.2em fraunces!important;
+    --wst-heading-5-font:normal normal 400 21px/1.25em fraunces!important;
+    --wst-heading-6-font:normal normal 400 18px/1.3em fraunces!important;
+    --wst-paragraph-1-font:normal normal 400 18px/1.5em wix-madefor-text-v2!important;
+    --wst-paragraph-2-font:normal normal 400 17px/1.5em wix-madefor-text-v2!important;
+    --wst-paragraph-3-font:normal normal 400 16px/1.5em wix-madefor-text-v2!important;
+  }
+  /* cijfers bij "Zo werkt het" (Wegwijzer voor gezinnen) */
+  #main_MF .comp-mwdhqat0,#main_MF .comp-mwdhqaxq,#main_MF .comp-mwdhqb2o,#main_MF .comp-mwdhqb7g,#main_MF .comp-mwdhqbch,#main_MF .comp-mwdhqbh0{font-size:42px!important}
+  /* knop op Gids op maat had een eigen grootte */
+  #main_MF .comp-mwddoejf .label{font-size:17px!important}
+}
