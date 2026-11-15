@@ -28,8 +28,8 @@
 
 @media screen and (min-width:1024px){
   /* --- Hoofdmenu: rechts uitgelijnd en binnen het scherm --- */
-  #main_MF .comp-mb7ogqrp_r_comp-mwdc0o1y{width:auto!important;max-width:calc(100% - 15%);justify-self:end!important;margin-left:0!important;margin-right:2.5%!important}
-  #main_MF .comp-mb7ogqrp_r_comp-mwdc0o1y ul{justify-content:flex-end}
+  #main_MF [id$="_r_comp-mwdc0o1y"]{width:auto!important;max-width:calc(100% - 15%);justify-self:end!important;margin-left:0!important;margin-right:2.5%!important}
+  #main_MF [id$="_r_comp-mwdc0o1y"] ul{justify-content:flex-end}
 
   /* --- Home: rijen van "Wat ik voor je kan doen" en "Waarom Wegwijzerij" op dezelfde hoogte --- */
   #main_MF .comp-mwdbybj4-container{grid-template-rows:repeat(4,auto)!important}
@@ -60,4 +60,79 @@ body.ww-menu-open{overflow:hidden}
 @media screen and (max-width:1023px){
   #main_MF .comp-mwdl2vy7{grid-area:6 / 1 / 7 / 2!important;margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
   #main_MF .comp-mwdl2w3x{grid-area:7 / 1 / 8 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+}
+
+/* --- Contact: volledige afbeelding (vierkant), ook op desktop --- */
+#main_MF .comp-mwdg5ewh6{--aspect-ratio:1!important}
+
+@media screen and (max-width:1023px){
+  /* Contact, mobiel: e-mailadres naast het icoon */
+  #main_MF .comp-mwdjb1ll{margin-bottom:max(0.5px, 0.2051282 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdjef53{grid-area:4 / 1 / 5 / 2!important;width:auto!important;margin-left:calc(6.1538462% + 19.7248938% + 16px)!important;margin-right:6.1538462%!important;
+    margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important;margin-bottom:max(0.5px, 0.2051282 * (var(--scaling-factor) - var(--scrollbar-width)))!important;
+    align-self:stretch!important;display:flex!important;align-items:center}
+
+  /* Over mij, mobiel: foto blijft een cirkel */
+  #main_MF .comp-mwddok4y{--aspect-ratio:1!important}
+
+  /* Over mij, mobiel: kaders in de volgorde leerde - doe - meemaak */
+  #main_MF .comp-mwddokjp{grid-area:8 / 1 / 9 / 2!important}
+  #main_MF .comp-mwddoklu{grid-area:9 / 1 / 10 / 2!important}
+}
+
+/* --- Mobiel: icoon en tekst beurtelings (volgorde zoals op desktop) --- */
+@media screen and (max-width:1023px){
+  /* /wegwijzer-voor-gezinnen/ – Veelgestelde vragen */
+  #main_MF .comp-mwdicigr{grid-area:2 / 1 / 3 / 2!important;margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc3s{grid-area:3 / 1 / 4 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc4c{grid-area:4 / 1 / 5 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdidg2i{grid-area:5 / 1 / 6 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc4q{grid-area:6 / 1 / 7 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc55{grid-area:7 / 1 / 8 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdiemwk{grid-area:8 / 1 / 9 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc5n{grid-area:9 / 1 / 10 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc65{grid-area:10 / 1 / 11 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdig1v5{grid-area:11 / 1 / 12 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc6q{grid-area:12 / 1 / 13 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc73{grid-area:13 / 1 / 14 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdih47t{grid-area:14 / 1 / 15 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc7k{grid-area:15 / 1 / 16 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc80{grid-area:16 / 1 / 17 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  /* /over-mij/ – Zo werk ik */
+  #main_MF .comp-mwdki87n{grid-area:2 / 1 / 3 / 2!important;margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomd2{grid-area:3 / 1 / 4 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomdk{grid-area:4 / 1 / 5 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdkij0e{grid-area:5 / 1 / 6 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomej{grid-area:6 / 1 / 7 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomex{grid-area:7 / 1 / 8 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdkjkf7{grid-area:8 / 1 / 9 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomfl{grid-area:9 / 1 / 10 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomfz{grid-area:10 / 1 / 11 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdkkrz0{grid-area:11 / 1 / 12 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomgo{grid-area:12 / 1 / 13 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  /* /vorming-op-maat/ – Mogelijke thema's */
+  #main_MF .comp-mwdxmii6{grid-area:2 / 1 / 3 / 2!important;margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdxf8hb{grid-area:3 / 1 / 4 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdxn27d{grid-area:4 / 1 / 5 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdxho56{grid-area:5 / 1 / 6 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdxngrx{grid-area:6 / 1 / 7 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdxjbdk{grid-area:7 / 1 / 8 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddohde{grid-area:8 / 1 / 9 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+}
+
+/* --- Mobiel: ondermarge verhuist mee naar het nieuwe laatste element --- */
+@media screen and (max-width:1023px){
+  #main_MF .comp-mwdih47t,#main_MF .comp-mwdxngrx,#main_MF .comp-mwddokjp{margin-bottom:0!important}
+  #main_MF .comp-mwddoc80{margin-bottom:max(0.5px, 0.1418269 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddohde{margin-bottom:max(0.5px, 0.0615385 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoklu{margin-bottom:max(0.5px, 0.2051282 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+}
+
+/* --- Over mij: regel "Drie invalshoeken…" weggelaten --- */
+#main_MF .comp-mwddok8k{display:none!important}
+@media screen and (min-width:1024px){
+  #main_MF .comp-mwddok8z{margin-top:max(0.5px, 0.1070313 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+}
+@media screen and (max-width:1023px){
+  #main_MF .comp-mwddok8z{margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
 }
