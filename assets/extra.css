@@ -187,3 +187,10 @@ body.ww-menu-open{overflow:hidden}
 @media screen and (min-width:1024px){
   #main_MF .comp-mwddo8wx,#main_MF .comp-mwddo8ya,#main_MF .comp-mwddo8zb,#main_MF .comp-mwddo909,#main_MF .comp-mwddo917,#main_MF .comp-mwddo921{min-height:78px!important}
 }
+
+/* --- Vorming op maat: kaders per rij even hoog en op dezelfde hoogte --- */
+@media screen and (min-width:1024px){
+  #main_MF .comp-mwdtdpvf,#main_MF .comp-mwddogzm,#main_MF .comp-mwdtdpx5,#main_MF .comp-mwdtdpz3{align-self:stretch!important;height:auto!important;margin-top:0!important;margin-bottom:2.5vw!important}
+  /* thema's: tekst op één lijn met het icoon */
+  #main_MF .comp-mwdxf8hb,#main_MF .comp-mwdxho56,#main_MF .comp-mwdxjbdk{margin-top:8px!important}
+}
