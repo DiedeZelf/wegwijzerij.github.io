@@ -1,0 +1,196 @@
+/* ==========================================================
+   Aanvullingen op de overgenomen Wix-opmaak
+   ========================================================== */
+
+/* --- Lettertypes, lokaal (geen Wix- of Google-servers) --- */
+@font-face{font-family:'fraunces';font-style:normal;font-weight:100 900;font-display:swap;
+  src:url('fonts/fraunces-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'fraunces';font-style:normal;font-weight:100 900;font-display:swap;
+  src:url('fonts/fraunces-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'wix-madefor-text-v2';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url('fonts/madefor-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'wix-madefor-text-v2';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url('fonts/madefor-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* Andere Wix-lettertypenamen wijzen naar dezelfde tekstletter, zodat er overal één lettertype is */
+@font-face{font-family:'ibm-plex-sans';font-weight:100 900;font-display:swap;src:url('fonts/madefor-latin.woff2') format('woff2')}
+@font-face{font-family:'madefor-text';font-weight:100 900;font-display:swap;src:url('fonts/madefor-latin.woff2') format('woff2')}
+
+/* --- Ruimte van de Wix-reclamebalk weghalen --- */
+*{--wix-ads-height:0px!important;--sticky-offset:0px!important;--wix-ads-top-height:0px!important}
+
+/* --- Over mij, "Zo werk ik": zelfde tekstletter en -grootte als "Waarom Wegwijzerij" --- */
+#main_MF .comp-mwddomd2 p,#main_MF .comp-mwddomej p,#main_MF .comp-mwddomfl p,#main_MF .comp-mwddomgo p{font:var(--wst-paragraph-2-font)!important}
+#main_MF .comp-mwddomd2 p *,#main_MF .comp-mwddomej p *,#main_MF .comp-mwddomfl p *,#main_MF .comp-mwddomgo p *{font:inherit!important}
+
+@media screen and (min-width:1024px){
+  /* --- Hoofdmenu: rechts uitgelijnd en binnen het scherm --- */
+  #main_MF [id$="_r_comp-mwdc0o1y"]{width:auto!important;max-width:calc(100% - 15%);justify-self:end!important;margin-left:0!important;margin-right:2.5%!important}
+  #main_MF [id$="_r_comp-mwdc0o1y"] ul{justify-content:flex-end}
+
+  /* --- Home: rijen van "Wat ik voor je kan doen" en "Waarom Wegwijzerij" op dezelfde hoogte --- */
+  #main_MF .comp-mwdbybj4-container{grid-template-rows:repeat(4,auto)!important}
+  #main_MF .comp-mwdez5f7,#main_MF .comp-mwdez5hv{grid-row:1 / span 4!important;display:grid!important;grid-template-rows:subgrid!important}
+  #main_MF .comp-mwdez5fa,#main_MF .comp-mwdez5hx{grid-row:1 / span 4!important;grid-template-rows:subgrid!important;height:auto!important}
+
+  /* --- Over mij, "Wat ik meebreng": drie even grote kaders --- */
+  #main_MF .comp-mwddokbl,#main_MF .comp-mwddokjp,#main_MF .comp-mwddoklu{align-self:stretch!important;height:auto!important;margin-bottom:4.5vw!important}
+  #main_MF .comp-mwddokbm2,#main_MF .comp-mwddokjq4,#main_MF .comp-mwddoklv3{height:100%!important}
+
+  /* --- Gids op maat: drie kaders naast elkaar, even hoog, knop eronder --- */
+  #main_MF .comp-mwddoeh4{grid-area:6 / 1 / 7 / 2!important}
+  #main_MF .comp-mwdldi8g,#main_MF .comp-mwddoe6d,#main_MF .comp-mwddoeh4{align-self:stretch!important;height:auto!important;margin-bottom:0!important}
+  #main_MF .comp-mwddoejf{grid-area:7 / 1 / 8 / 2!important;justify-self:center!important;margin-left:0!important;margin-right:0!important;margin-top:3.2vw!important}
+}
+
+/* --- Mobiel menu (vervangt het Wix-script) --- */
+.ww-menu{position:fixed;inset:0;z-index:100002;background:#F9F7F2;display:none;flex-direction:column;padding:24px 28px;overflow-y:auto;font-family:'wix-madefor-text-v2',sans-serif}
+.ww-menu.open{display:flex}
+.ww-menu-close{align-self:flex-end;background:none;border:0;width:44px;height:44px;cursor:pointer;color:#4A4540;padding:0}
+.ww-menu-close svg{width:28px;height:28px}
+.ww-menu ul{list-style:none;margin:32px 0 0;padding:0;display:flex;flex-direction:column;gap:22px}
+.ww-menu a{color:#4A4540;text-decoration:none;font-size:20px;line-height:1.35}
+.ww-menu a[aria-current="page"]{text-decoration:underline;text-underline-offset:4px}
+body.ww-menu-open{overflow:hidden}
+
+/* --- Gids op maat, mobiel: stap 3 stond onder de tekst van stap 3 --- */
+@media screen and (max-width:1023px){
+  #main_MF .comp-mwdl2vy7{grid-area:6 / 1 / 7 / 2!important;margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdl2w3x{grid-area:7 / 1 / 8 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+}
+
+/* --- Contact: volledige afbeelding (vierkant), ook op desktop --- */
+#main_MF .comp-mwdg5ewh6{--aspect-ratio:1!important}
+
+@media screen and (max-width:1023px){
+  /* Contact, mobiel: e-mailadres naast het icoon */
+  #main_MF .comp-mwdjb1ll{margin-bottom:max(0.5px, 0.2051282 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdjef53{grid-area:4 / 1 / 5 / 2!important;width:auto!important;margin-left:calc(6.1538462% + 19.7248938% + 16px)!important;margin-right:6.1538462%!important;
+    margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important;margin-bottom:max(0.5px, 0.2051282 * (var(--scaling-factor) - var(--scrollbar-width)))!important;
+    align-self:stretch!important;display:flex!important;align-items:center}
+
+  /* Over mij, mobiel: foto blijft een cirkel */
+  #main_MF .comp-mwddok4y{--aspect-ratio:1!important}
+
+  /* Over mij, mobiel: kaders in de volgorde leerde - doe - meemaak */
+  #main_MF .comp-mwddokjp{grid-area:8 / 1 / 9 / 2!important}
+  #main_MF .comp-mwddoklu{grid-area:9 / 1 / 10 / 2!important}
+}
+
+/* --- Mobiel: icoon en tekst beurtelings (volgorde zoals op desktop) --- */
+@media screen and (max-width:1023px){
+  /* /wegwijzer-voor-gezinnen/ – Veelgestelde vragen */
+  #main_MF .comp-mwdicigr{grid-area:2 / 1 / 3 / 2!important;margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc3s{grid-area:3 / 1 / 4 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc4c{grid-area:4 / 1 / 5 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdidg2i{grid-area:5 / 1 / 6 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc4q{grid-area:6 / 1 / 7 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc55{grid-area:7 / 1 / 8 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdiemwk{grid-area:8 / 1 / 9 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc5n{grid-area:9 / 1 / 10 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc65{grid-area:10 / 1 / 11 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdig1v5{grid-area:11 / 1 / 12 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc6q{grid-area:12 / 1 / 13 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc73{grid-area:13 / 1 / 14 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdih47t{grid-area:14 / 1 / 15 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc7k{grid-area:15 / 1 / 16 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoc80{grid-area:16 / 1 / 17 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  /* /over-mij/ – Zo werk ik */
+  #main_MF .comp-mwdki87n{grid-area:2 / 1 / 3 / 2!important;margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomd2{grid-area:3 / 1 / 4 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomdk{grid-area:4 / 1 / 5 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdkij0e{grid-area:5 / 1 / 6 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomej{grid-area:6 / 1 / 7 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomex{grid-area:7 / 1 / 8 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdkjkf7{grid-area:8 / 1 / 9 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomfl{grid-area:9 / 1 / 10 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomfz{grid-area:10 / 1 / 11 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdkkrz0{grid-area:11 / 1 / 12 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddomgo{grid-area:12 / 1 / 13 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  /* /vorming-op-maat/ – Mogelijke thema's */
+  #main_MF .comp-mwdxmii6{grid-area:2 / 1 / 3 / 2!important;margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdxf8hb{grid-area:3 / 1 / 4 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdxn27d{grid-area:4 / 1 / 5 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdxho56{grid-area:5 / 1 / 6 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdxngrx{grid-area:6 / 1 / 7 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwdxjbdk{grid-area:7 / 1 / 8 / 2!important;margin-top:max(0.5px, 0.0307692 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddohde{grid-area:8 / 1 / 9 / 2!important;margin-top:max(0.5px, 0.0820513 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+}
+
+/* --- Mobiel: ondermarge verhuist mee naar het nieuwe laatste element --- */
+@media screen and (max-width:1023px){
+  #main_MF .comp-mwdih47t,#main_MF .comp-mwdxngrx,#main_MF .comp-mwddokjp{margin-bottom:0!important}
+  #main_MF .comp-mwddoc80{margin-bottom:max(0.5px, 0.1418269 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddohde{margin-bottom:max(0.5px, 0.0615385 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+  #main_MF .comp-mwddoklu{margin-bottom:max(0.5px, 0.2051282 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+}
+
+/* --- Over mij: regel "Drie invalshoeken…" weggelaten --- */
+#main_MF .comp-mwddok8k{display:none!important}
+@media screen and (min-width:1024px){
+  #main_MF .comp-mwddok8z{margin-top:max(0.5px, 0.1070313 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+}
+@media screen and (max-width:1023px){
+  #main_MF .comp-mwddok8z{margin-top:max(0.5px, 0.1025641 * (var(--scaling-factor) - var(--scrollbar-width)))!important}
+}
+
+/* --- Desktop: gangbare, vaste lettergroottes (Wix schaalde mee met de schermbreedte) --- */
+@media screen and (min-width:1024px){
+  #main_MF,#main_MF *{
+    --wst-heading-1-font:normal normal 400 52px/1.05em fraunces!important;
+    --wst-heading-2-font:normal normal 400 42px/1.1em fraunces!important;
+    --wst-heading-3-font:normal normal 400 32px/1.15em fraunces!important;
+    --wst-heading-4-font:normal normal 400 26px/1.2em fraunces!important;
+    --wst-heading-5-font:normal normal 400 21px/1.25em fraunces!important;
+    --wst-heading-6-font:normal normal 400 18px/1.3em fraunces!important;
+    --wst-paragraph-1-font:normal normal 400 18px/1.5em wix-madefor-text-v2!important;
+    --wst-paragraph-2-font:normal normal 400 17px/1.5em wix-madefor-text-v2!important;
+    --wst-paragraph-3-font:normal normal 400 16px/1.5em wix-madefor-text-v2!important;
+  }
+  /* cijfers bij "Zo werkt het" (Wegwijzer voor gezinnen) */
+  #main_MF .comp-mwdhqat0,#main_MF .comp-mwdhqaxq,#main_MF .comp-mwdhqb2o,#main_MF .comp-mwdhqb7g,#main_MF .comp-mwdhqbch,#main_MF .comp-mwdhqbh0{font-size:42px!important}
+  /* knop op Gids op maat had een eigen grootte */
+  #main_MF .comp-mwddoejf .label{font-size:17px!important}
+}
+
+/* --- Wegwijzer voor gezinnen, "Zo werkt het": gelijke afstanden en doorlopende lijn --- */
+@media screen and (min-width:1024px){
+  #main_MF .comp-mwdhytzf{grid-template-rows:repeat(13,auto)!important}
+  #main_MF .comp-mwdhqat0{grid-area:2 / 1 / 3 / 2!important;margin-top:0px!important;margin-bottom:0!important;}
+  #main_MF .comp-mwddo8wx{grid-area:2 / 1 / 3 / 2!important;margin-top:9px!important;margin-bottom:0!important}
+  #main_MF .comp-mwdhqaxq{grid-area:4 / 1 / 5 / 2!important;margin-top:28px!important;margin-bottom:0!important;}
+  #main_MF .comp-mwddo8ya{grid-area:4 / 1 / 5 / 2!important;margin-top:37px!important;margin-bottom:0!important}
+  #main_MF .comp-mwdhqb2o{grid-area:6 / 1 / 7 / 2!important;margin-top:28px!important;margin-bottom:0!important;}
+  #main_MF .comp-mwddo8zb{grid-area:6 / 1 / 7 / 2!important;margin-top:37px!important;margin-bottom:0!important}
+  #main_MF .comp-mwdhqb7g{grid-area:8 / 1 / 9 / 2!important;margin-top:28px!important;margin-bottom:0!important;}
+  #main_MF .comp-mwddo909{grid-area:8 / 1 / 9 / 2!important;margin-top:37px!important;margin-bottom:0!important}
+  #main_MF .comp-mwdhqbch{grid-area:10 / 1 / 11 / 2!important;margin-top:28px!important;margin-bottom:0!important;}
+  #main_MF .comp-mwddo917{grid-area:10 / 1 / 11 / 2!important;margin-top:37px!important;margin-bottom:0!important}
+  #main_MF .comp-mwdhqbh0{grid-area:12 / 1 / 13 / 2!important;margin-top:28px!important;}
+  #main_MF .comp-mwddo921{grid-area:12 / 1 / 13 / 2!important;margin-top:37px!important;margin-bottom:64px!important}
+  #main_MF .comp-mwddo8xg{grid-area:2 / 1 / 4 / 2!important;align-self:stretch!important;height:auto!important;margin-top:52px!important;margin-bottom:-18px!important}
+  #main_MF .comp-mwddo8yw{grid-area:4 / 1 / 6 / 2!important;align-self:stretch!important;height:auto!important;margin-top:80px!important;margin-bottom:-18px!important}
+  #main_MF .comp-mwddo8zv{grid-area:6 / 1 / 8 / 2!important;align-self:stretch!important;height:auto!important;margin-top:80px!important;margin-bottom:-18px!important}
+  #main_MF .comp-mwddo90r{grid-area:8 / 1 / 10 / 2!important;align-self:stretch!important;height:auto!important;margin-top:80px!important;margin-bottom:-18px!important}
+  #main_MF .comp-mwddo91n{grid-area:10 / 1 / 12 / 2!important;align-self:stretch!important;height:auto!important;margin-top:80px!important;margin-bottom:-18px!important}
+}
+
+/* --- Home, getuigenis: naam direct onder het citaat --- */
+@media screen and (min-width:1024px){
+  #main_MF .comp-mwdfu6vf{grid-area:2 / 1 / 4 / 2!important;align-self:center!important}
+  #main_MF .comp-mwdfu6xk{margin-bottom:0!important}
+  #main_MF .comp-mwdfu6yd{margin-top:18px!important}
+}
+@media screen and (min-width:1024px){
+  #main_MF .comp-mwddo8wx,#main_MF .comp-mwddo8ya,#main_MF .comp-mwddo8zb,#main_MF .comp-mwddo909,#main_MF .comp-mwddo917,#main_MF .comp-mwddo921{min-height:78px!important}
+}
+
+/* --- Vorming op maat: kaders per rij even hoog en op dezelfde hoogte --- */
+@media screen and (min-width:1024px){
+  #main_MF .comp-mwdtdpvf,#main_MF .comp-mwddogzm,#main_MF .comp-mwdtdpx5,#main_MF .comp-mwdtdpz3{align-self:stretch!important;height:auto!important;margin-top:0!important;margin-bottom:2.5vw!important}
+  /* thema's: tekst op één lijn met het icoon */
+  #main_MF .comp-mwdxf8hb,#main_MF .comp-mwdxho56,#main_MF .comp-mwdxjbdk{margin-top:8px!important}
+}
