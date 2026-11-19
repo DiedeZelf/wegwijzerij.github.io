@@ -1,0 +1,191 @@
+/* =============================================================
+   Wegwijzerij – stijlblad
+   Kleuren en lettertypes zijn overgenomen van de Wix-site.
+   ============================================================= */
+
+/* ---------- Lettertypes (lokaal) ---------- */
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;
+  src:url("fonts/fraunces-latin.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;
+  src:url("fonts/fraunces-latin-ext.woff2") format("woff2");
+  unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Madefor";font-style:normal;font-weight:400 800;font-display:swap;
+  src:url("fonts/madefor-latin.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Madefor";font-style:normal;font-weight:400 800;font-display:swap;
+  src:url("fonts/madefor-latin-ext.woff2") format("woff2");
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* ---------- Kleuren en maten ---------- */
+:root{
+  --bg:#F9F7F2;          /* achtergrond */
+  --card:#F0EEE9;        /* lichte kaders */
+  --ink:#4A4540;         /* tekst */
+  --muted:#75716D;       /* ondertitels */
+  --teal:#2F5A5C;        /* donkere kaders en knoppen */
+  --teal-ink:#335255;    /* cijfers, vragen */
+  --coral:#E08E6D;       /* rand van de knop */
+  --footer:#49634F;      /* voettekst */
+  --line:#D9D4CB;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Madefor",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --radius:28px;
+  --section:clamp(48px,7vw,88px);
+  color-scheme:light;
+}
+
+/* ---------- Basis ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans)}
+@media (min-width:1024px){body{font-size:18px}}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--ink);line-height:1.15;margin:0 0 .6em;text-wrap:balance}
+h1{font-size:clamp(36px,2.4rem + 2vw,56px);letter-spacing:-.01em}
+h2{font-size:clamp(28px,1.6rem + 1.2vw,40px)}
+h3{font-size:clamp(21px,1.2rem + .4vw,24px)}
+p{margin:0 0 1em}
+p:last-child{margin-bottom:0}
+ul,ol{margin:0 0 1em;padding-left:1.25em}
+li{margin-bottom:.35em}
+li::marker{color:var(--teal-ink)}
+strong{font-weight:700}
+.small{font-size:.875rem;color:var(--muted)}
+.wrap{width:min(1120px,100% - 48px);margin-inline:auto}
+.narrow{max-width:760px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--teal);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+
+/* ---------- Kop en menu ---------- */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid transparent;transition:border-color .2s}
+.site-header.scrolled{border-bottom-color:var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.brand img{width:52px;height:52px;border-radius:50%}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:6px 26px;flex-wrap:wrap;justify-content:flex-end}
+nav li{margin:0}
+nav a{text-decoration:none;font-size:16px;padding:6px 0;border-bottom:1px solid transparent}
+nav a:hover{border-bottom-color:var(--ink)}
+nav a[aria-current="page"]{border-bottom-color:var(--ink)}
+.nav-toggle{display:none;background:none;border:0;width:44px;height:44px;padding:10px;cursor:pointer}
+.nav-toggle span{display:block;height:2px;background:var(--ink);margin:5px 0;transition:transform .2s,opacity .2s}
+@media (max-width:900px){
+  .header-inner{height:60px}
+  .brand img{width:44px;height:44px}
+  .nav-toggle{display:block}
+  nav{position:fixed;inset:60px 0 0 0;background:var(--bg);display:none;overflow-y:auto}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:16px 24px}
+  nav a{display:block;font-size:20px;padding:14px 0;border-bottom:1px solid var(--line)}
+  nav a[aria-current="page"]{border-bottom-color:var(--line);font-weight:700}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  body.menu-open{overflow:hidden}
+}
+
+/* ---------- Secties ---------- */
+.section{padding-block:calc(var(--section) / 2)}
+.section.first{padding-top:var(--section)}
+main > .section:last-child{padding-bottom:var(--section)}
+.hero{padding:var(--section) 0 calc(var(--section) / 2);text-align:center}
+.hero h1{margin-bottom:.35em}
+.lead{font-size:clamp(17px,1rem + .3vw,20px);color:var(--muted);margin-inline:auto;max-width:36em}
+.band{background:var(--card);margin-block:calc(var(--section) / 2);padding-block:var(--section)}
+main > .band:last-child{margin-bottom:0}
+
+/* tekst naast afbeelding, verticaal gecentreerd */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.split .text{max-width:620px}
+.split .media{display:flex;justify-content:center}
+.split .media img.round{width:min(100%,360px)}
+.split .media img.portrait{width:min(100%,340px)}
+.split .media img.card-img{width:100%;max-width:520px}
+@media (max-width:760px){
+  .split{grid-template-columns:1fr}
+  .split .media{order:-1}
+  .split .media img.round{width:min(70%,280px)}
+  .split .media img.card-img{max-width:400px}
+}
+img.round{border-radius:50%;aspect-ratio:1;object-fit:cover}
+img.card-img{border-radius:40px;box-shadow:0 10px 30px -15px rgba(44,41,38,.25)}
+
+/* knop */
+.cta{text-align:center;margin:clamp(28px,4vw,40px) 0 0}
+.split .cta,.cta.left{text-align:left}
+.btn{display:inline-block;background:var(--teal);color:#F9F7F2;text-decoration:none;border:1px solid var(--coral);border-radius:999px;padding:14px 32px;font-size:17px;line-height:1.3}
+.btn:hover{background:#244749;text-decoration:none}
+
+/* kaders */
+.cards{display:grid;gap:24px}
+.cards.cols-3{grid-template-columns:repeat(3,1fr)}
+.cards.cols-2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:1000px){.cards.cols-3{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.cards.cols-3,.cards.cols-2{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:var(--radius);padding:clamp(24px,3vw,36px)}
+.card.light{background:var(--bg)}
+.card.dark{background:var(--teal);color:#F9F7F2}
+.card.dark h3{color:#F9F7F2}
+.card h2{font-size:clamp(26px,1.4rem + 1vw,36px)}
+.card ul{padding-left:1.1em}
+
+/* lijsten met wegwijzer-icoon */
+.icon-list{list-style:none;padding:0;margin:0}
+.icon-list li{display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start;margin:0 0 24px}
+.icon-list li:last-child{margin-bottom:0}
+.icon-list .sign{width:40px;height:40px;object-fit:contain;margin-top:-4px}
+.icon-list h3{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--teal-ink);margin:2px 0 .3em}
+.icon-list.divided li{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--line)}
+.icon-list.divided li:last-child{border-bottom:0;padding-bottom:0;margin-bottom:0}
+.icon-list.divided p{margin-top:6px}
+.icon-list.faq{max-width:760px}
+.icon-list.faq li{margin-bottom:28px}
+.sign-note{display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start;margin-top:20px}
+.sign-note .sign{width:40px;height:40px;object-fit:contain;margin-top:-4px}
+.two-lists{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px)}
+@media (max-width:760px){.two-lists{grid-template-columns:1fr;gap:48px}}
+
+/* stappen "Zo werkt het" */
+.steps-card{padding:clamp(28px,4vw,56px)}
+.steps{list-style:none;margin:8px 0 0;padding:0;max-width:760px}
+.steps li{position:relative;display:grid;grid-template-columns:56px 1fr;gap:20px;padding-bottom:28px;margin:0;min-height:118px}
+.steps li:last-child{min-height:0}
+.steps li:last-child{padding-bottom:0}
+.steps .num{font-family:var(--serif);font-size:36px;line-height:1;color:var(--teal-ink);text-align:center}
+.steps p{margin:6px 0 0}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:28px;top:46px;bottom:6px;width:2px;background:var(--teal-ink);transform:translateX(-1px)}
+.plain-ol{padding-left:1.3em}
+
+/* getuigenis */
+.quote{display:grid;grid-template-columns:220px 1fr;gap:clamp(24px,5vw,64px);align-items:center;margin:0;max-width:960px}
+.quote img{width:220px}
+.quote blockquote{margin:0;font-size:clamp(17px,1rem + .3vw,20px);line-height:1.6}
+.quote figcaption{margin-top:16px;color:var(--muted)}
+@media (max-width:760px){.quote{grid-template-columns:1fr;justify-items:center;text-align:center}.quote img{width:180px}}
+
+/* contact */
+.mail-line{display:flex;align-items:center;gap:14px;font-size:19px}
+.mail-line img{width:56px;height:56px;object-fit:contain}
+
+/* privacy */
+.prose h2{font-size:24px;margin-top:1.6em}
+.lead-left{font-size:19px;color:var(--muted)}
+
+/* ---------- Voettekst ---------- */
+.site-footer{background:var(--footer);color:#F9F7F2;padding:48px 0 24px}
+.site-footer a{color:#F9F7F2}
+.footer-inner{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center}
+.footer-logo img{width:300px;height:auto;border-radius:14px}
+.footer-text p{margin:0 0 .4em;max-width:30em}
+.footer-links{list-style:none;margin:0;padding:0}
+.copyright{text-align:center;font-size:14px;opacity:.85;margin:36px 0 0}
+@media (max-width:760px){
+  .footer-inner{grid-template-columns:1fr;justify-items:center;text-align:center;gap:20px}
+  .footer-logo img{width:260px}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:600px){.lead br{display:none}}
